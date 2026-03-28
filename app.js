@@ -99,7 +99,15 @@ function svgZap(w) {
 // ========== MENSAGEM DO WHATSAPP REFORMULADA ==========
 
 function msgPedido(nomeItem) {
-  return 'Olá! Gostaria de pedir um:\n*' + nomeItem + '*\ne meu nome é:';
+  // Remove peso (aprox.), valor (R$) e massa de nomeItem
+  var textoLimpo = nomeItem
+    .replace(/\(.*?R\$.*?\)/g, '') // remove (R$...) entre parênteses
+    .replace(/\baprox\.? ?\d+g\b/gi, '') // remove aprox. 250g, etc
+    .replace(/\bmassa:? ?[^,\n)]+/gi, '') // remove massa: ...
+    .replace(/\(.*?g\)/g, '') // remove (250g), (350g), etc
+    .replace(/\s+/g, ' ') // remove espaços extras
+    .trim();
+  return 'Olá! Gostaria de pedir um:\n*' + textoLimpo + '*\ne meu nome é:';
 }
 
 // ========== RENDER OVOS DE COLHER ==========
@@ -109,7 +117,7 @@ function renderColher() {
   if (!container) return;
 
   ovosColher.forEach(function(item, i) {
-    var msg = msgPedido('Ovo de Colher - ' + item.nome + ' (R$' + item.preco + ')');
+    var msg = msgPedido('Ovo de Colher - ' + item.nome);
     var href = linkZap(msg);
 
     var div = document.createElement('div');
@@ -157,7 +165,7 @@ function renderTrufados() {
   grid.className = 'trufados-sabores-grid';
 
   trufadosSabores.forEach(function(sabor, i) {
-    var msg = msgPedido('Ovo Trufado - ' + sabor + ' (R$' + trufadoPreco + ')');
+    var msg = msgPedido('Ovo Trufado - ' + sabor);
     var href = linkZap(msg);
 
     var card = document.createElement('a');
@@ -192,7 +200,7 @@ function renderTradicionais() {
   grid.className = 'tradicionais-grid';
 
   tradicionais.forEach(function(item, i) {
-    var msg = msgPedido('Ovo Tradicional (' + item.peso + ' - R$' + item.preco + ')');
+    var msg = msgPedido('Ovo Tradicional ' + item.peso);
     var href = linkZap(msg);
 
     var card = document.createElement('div');
