@@ -107,9 +107,10 @@ function svgZap(w) {
 function msgPedido(nomeItem) {
   var textoLimpo = nomeItem
     .replace(/\(.*?R\$.*?\)/g, '')
-    .replace(/\baprox\.? ?\d+g\b/gi, '')
+    // .replace(/\baprox\.? ?\d+g\b/gi, '') // REMOVIDO: manter o peso
     .replace(/\bmassa:? ?[^,\n)]+/gi, '')
-    .replace(/\(.*?g\)/g, '')
+    // .replace(/\(.*?g\)/g, '') // REMOVIDO: manter o peso
+    .replace(/aprox\.?/gi, '-')
     .replace(/\s+/g, ' ')
     .trim();
   return 'Olá! Gostaria de pedir um:\n*' + textoLimpo + '*\ne meu nome é:';
