@@ -1,0 +1,23 @@
+# Documentação das Imagens do Projeto
+
+Abaixo está a descrição do que representa cada imagem, com o nome original do backup e o nome atual no projeto, incluindo informações de cor, proporção, modo de transparência e canal:
+
+- bg master fixo, listras, #ABC697 e #DBE4C6.png → bg-master-fixo-listras.png: Fundo principal do site, com listras nas cores #ABC697 e #DBE4C6. Uso: background decorativo. Proporção: horizontal. Transparência: pode ser usado com fundo transparente ou opaco. Canal: não se aplica.
+- cabeçalho de flores chocolates e folhas (1 x 4 y).png → cabecalho-flores-chocolates-folhas.png: Imagem de cabeçalho com flores, chocolates e folhas. Proporção: 1x4 (horizontal). Transparência: fundo transparente recomendado para sobreposição no topo da página. Canal: alfa.
+- Coelho centado com ovo #EAF2AE.png → coelho-ovo.png: Ilustração de um coelho sentado ao lado de um ovo. Cor predominante: #EAF2AE. Proporção: aproximadamente quadrada. Transparência: fundo transparente para uso decorativo. Canal: alfa.
+- LOGO Confeitaria-ALDO LANCHES.png → logo-confeitaria-aldo-lanches.png: Logotipo da Confeitaria Aldo Lanches. Proporção: horizontal. Transparência: fundo transparente ou branco. Canal: alfa (preferencial).
+- Ovo de colher 1.png → ovo-colher-1.png: Foto/ilustração de um ovo de colher. Proporção: vertical. Transparência: fundo transparente recomendado. Canal: subtrair (usar canal subtrair para transparência, conforme nome original).
+- Ovo tradicional unico (aprox x1 y1,5) (deve usar canal subtrair em transparencia, fundo branco).png → ovo-tradicional-unico.png: Imagem de um ovo tradicional único. Proporção: aprox. 1x1,5 (vertical). Transparência: fundo transparente recomendado. Canal: subtrair (usar canal subtrair para transparência, conforme nome original).
+- Ovo Trufado (amarelo) (aprox x1 y1,5) (deve usar canal subtrair em transparencia, fundo branco).png → ovo-trufado-amarelo.png: Imagem de ovo trufado com destaque amarelo. Proporção: vertical. Transparência: fundo transparente recomendado. Canal: subtrair (usar canal subtrair para transparência, conforme nome original).
+- Ovo Trufado (azul) (aprox x1 y1,5) (deve usar canal subtrair em transparencia, fundo branco).png → ovo-trufado-azul.png: Imagem de ovo trufado com destaque azul. Proporção: vertical. Transparência: fundo transparente recomendado. Canal: subtrair (usar canal subtrair para transparência, conforme nome original).
+- Ovo Trufado (rosa) (aprox x1 y1,5) (deve usar canal subtrair em transparencia, fundo branco.png → ovo-trufado-rosa.png: Imagem de ovo trufado com destaque rosa. Proporção: vertical. Transparência: fundo transparente recomendado. Canal: subtrair (usar canal subtrair para transparência, conforme nome original).
+- Varios ovos tardicionais (aprox x1,5 y1) (deve usar canal subtrair em transparencia, fundo branco).png → varios-ovos-tradicionais.png: Imagem com vários ovos tradicionais juntos. Proporção: horizontal. Transparência: fundo transparente recomendado. Canal: subtrair (usar canal subtrair para transparência, conforme nome original).
+- Varios ovos trunfados cortado de perfil (aprox x1 y1,5) (deve usar canal subtrair em transparencia, fundo branco.png → varios-ovos-trufados-perfil.png: Imagem de vários ovos trufados cortados de perfil. Proporção: vertical. Transparência: fundo transparente recomendado. Canal: subtrair (usar canal subtrair para transparência, conforme nome original).
+
+# Fonte utilizada no projeto
+- A fonte principal utilizada no site está localizada na raiz do projeto. Certifique-se de incluí-la no CSS para garantir a identidade visual.
+
+# Cores principais do projeto
+- Fonte: #526947
+- Destaque: #7C9E6C
+- Fundo: #EAEDD8

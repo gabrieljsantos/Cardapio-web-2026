@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio de Páscoa - Aldo Lanches</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- FUNDO FIXO LISTRADO -->
+  <div class="bg-fixed"></div>
+
+  <!-- CONTAINER PRINCIPAL -->
+  <div class="container-principal">
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+      <div class="header-deco">
+        <img src="assets/cabecalho-flores-chocolates-folhas.png" alt="Cabeçalho decorativo" class="header-img">
+      </div>
+      <img src="assets/logo-confeitaria-aldo-lanches.png" alt="Logo Aldo Lanches" class="logo anim-fade-in">
+      <div class="titulo-wrap anim-slide-up">
+        <h1 class="titulo-principal">Cardápio</h1>
+        <span class="titulo-de">de</span>
+        <h1 class="titulo-principal titulo-pascoa">Páscoa</h1>
+      </div>
+      <img src="assets/coelho-ovo.png" alt="Coelho com ovo" class="coelho-hero">
+    </header>
+
+    <!-- OVOS DE COLHER -->
+    <section class="secao secao-colher" id="secao-colher">
+      <div class="secao-titulo-wrap anim-slide-up">
+        <h2>🥄 Ovos de Colher</h2>
+        <span class="secao-peso">aprox. 800g</span>
+      </div>
+      <div class="colher-img-topo anim-zoom-in">
+        <img src="assets/ovo-colher-1.png" alt="Ovo de Colher">
+      </div>
+      <div class="colher-lista" id="ovos-colher"></div>
+    </section>
+
+    <!-- OVOS TRUFADOS -->
+    <section class="secao secao-trufados" id="secao-trufados">
+      <div class="secao-titulo-wrap anim-slide-up">
+        <h2>🍫 Ovos Trufados</h2>
+        <span class="secao-peso">aprox. 800g</span>
+      </div>
+      <div class="trufados-layout">
+        <div class="trufados-perfil-wrap anim-zoom-in">
+          <img src="assets/varios-ovos-trufados-perfil.png" alt="Vários Ovos Trufados" class="img-perfil">
+        </div>
+        <div class="trufados-lista" id="ovos-trufados"></div>
+      </div>
+    </section>
+
+    <!-- OVOS TRADICIONAIS -->
+    <section class="secao secao-tradicionais" id="secao-tradicionais">
+      <div class="secao-titulo-wrap anim-slide-up">
+        <h2>🥚 Ovos Tradicionais</h2>
+      </div>
+      <div class="tradicionais-layout">
+        <div class="tradicionais-imagens anim-zoom-in">
+          <img src="assets/ovo-tradicional-unico.png" alt="Ovo Tradicional" class="img-trad-unico">
+          <img src="assets/varios-ovos-tradicionais.png" alt="Vários Ovos Tradicionais" class="img-trad-varios">
+        </div>
+        <div class="tradicionais-lista" id="ovos-tradicionais"></div>
+      </div>
+    </section>
+
+    <!-- AVISO / INFORMAÇÕES -->
+    <section class="secao secao-aviso">
+      <div class="aviso-card anim-slide-up">
+        <h2>📋 Informações Importantes</h2>
+        <p>Olá, queridos clientes!</p>
+        <p>Caso não encontre no cardápio exatamente o que deseja, você pode montar seu pedido da forma que preferir — será um prazer preparar algo especial para você!</p>
+        <p>Os pedidos devem ser feitos com <strong>antecedência até o dia 1º de abril</strong>, com pagamento de <strong>50% no ato do pedido</strong> e os outros <strong>50% na retirada</strong>.</p>
+      </div>
+    </section>
+
+    <!-- MENSAGEM FINAL -->
+    <section class="secao secao-final">
+      <div class="final-card anim-slide-up">
+        <img src="assets/logo-confeitaria-aldo-lanches.png" alt="Logo Aldo Lanches" class="logo-final anim-pulse">
+        <p>Desejamos a você uma Páscoa doce, cheia de amor, renovação e momentos especiais ao lado de quem você ama. Que nunca falte carinho, esperança e, claro, muito chocolate!</p>
+        <p class="assinatura">Com carinho, Aldo Lanches 🐰🍫</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- BOTÃO WHATSAPP FIXO -->
+  <a href="#" id="btn-whatsapp-fixo" class="btn-whatsapp-fixo" target="_blank" rel="noopener">
+    <svg viewBox="0 0 32 32" width="28" height="28" fill="#fff"><path d="M16.01 2.93A13.07 13.07 0 0 0 2.93 16a12.94 12.94 0 0 0 1.74 6.53L2.84 29.16l6.83-1.79A13.06 13.06 0 1 0 16.01 2.93zm0 23.93a10.82 10.82 0 0 1-5.52-1.51l-.4-.23-4.05 1.06 1.08-3.94-.26-.41a10.87 10.87 0 1 1 9.15 5.03zm5.96-8.13c-.33-.16-1.93-.95-2.23-1.06s-.52-.16-.73.17-.84 1.06-1.03 1.28-.38.25-.71.08a8.93 8.93 0 0 1-2.64-1.63 9.87 9.87 0 0 1-1.82-2.26c-.19-.33 0-.5.14-.67.14-.15.33-.38.49-.58s.22-.33.33-.55a.6.6 0 0 0-.03-.58c-.08-.16-.73-1.76-.99-2.41s-.52-.55-.73-.56h-.62a1.2 1.2 0 0 0-.87.41 3.64 3.64 0 0 0-1.13 2.71 6.34 6.34 0 0 0 1.33 3.37 14.53 14.53 0 0 0 5.57 4.92 18.7 18.7 0 0 0 1.86.69 4.47 4.47 0 0 0 2.06.13 3.36 3.36 0 0 0 2.2-1.55 2.71 2.71 0 0 0 .19-1.55c-.08-.14-.3-.22-.63-.38z"/></svg>
+    <span>Fazer Pedido</span>
+  </a>
+
+  <script src="./app.js"></script>
+</body>
+</html>
