@@ -1,3 +1,29 @@
+/* Marca d'água do logo no cabeçalho */
+.logo-watermark-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.logo-watermark {
+  opacity: 0.08;
+  width: 100%;
+  max-width: 520px;
+  filter: blur(0.5px);
+  user-select: none;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+}
 /* ========== FONTES ========== */
 @font-face {
   font-family: 'FonteTitulos';
@@ -144,7 +170,7 @@ body {
 }
 
 .logo {
-  width: 100%;
+  width: 80%;
   max-width: 50%;
   display: block;
   margin: 0 auto 0.75rem auto;
@@ -155,25 +181,15 @@ body {
   margin: 0.5rem 0 0.5rem 0;
 }
 
-.titulo-principal {
+
+.titulo-principal,
+.titulo-de,
+.titulo-pascoa {
   font-family: 'FonteTitulos', Georgia, serif;
   color: #7C9E6C;
-  font-size: clamp(2rem, 8vw, 3.2rem);
+  font-size: clamp(6rem, 8vw, 6rem);
   line-height: 1.1;
   letter-spacing: 0.5px;
-}
-
-.titulo-de {
-  font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
-  font-style: italic;
-  color: #7C9E6C;
-  font-size: clamp(1rem, 4vw, 1.4rem);
-  display: block;
-  margin: 0.1rem 0;
-}
-
-.titulo-pascoa {
-  font-size: clamp(2.4rem, 9vw, 3.8rem);
 }
 
 .coelho-hero {
@@ -215,7 +231,7 @@ body {
 .secao-titulo-wrap h2 {
   font-family: 'FonteTitulos', Georgia, serif;
   color: #7C9E6C;
-  font-size: clamp(1.4rem, 5.5vw, 2.2rem);
+  font-size: clamp(2.8rem, 11vw, 4.4rem);
   margin-bottom: 0.15rem;
 }
 
@@ -233,7 +249,7 @@ body {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
   color: #7C9E6C;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
 }
 
 /* ====================================================
@@ -281,14 +297,14 @@ body {
 
 .sabor-nome {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 1.15rem;
+  font-size: 2.3rem;
   color: #526947;
   text-decoration: none;
 }
 
 .sabor-preco {
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 1.2rem;
+  font-size: 2.4rem;
   font-weight: bold;
   color: #7C9E6C;
   white-space: nowrap;
@@ -297,13 +313,13 @@ body {
 .sabor-casca {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
-  font-size: 0.82rem;
+  font-size: 1.64rem;
   color: #7C9E6C;
   margin-bottom: 0.25rem;
 }
 
 .sabor-desc {
-  font-size: 0.88rem;
+  font-size: 1.76rem;
   color: #526947;
   line-height: 1.45;
   margin-bottom: 0.6rem;
@@ -315,7 +331,7 @@ body {
   gap: 0.35rem;
   color: #25D366;
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 0.85rem;
+  font-size: 1.7rem;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
@@ -340,7 +356,7 @@ body {
   top: 0.6rem; right: 0.6rem;
   background: #25D366;
   color: #fff;
-  font-size: 0.65rem;
+  font-size: 1.3rem;
   padding: 0.2rem 0.5rem;
   border-radius: 8px;
   font-family: 'FonteTexto', Arial, sans-serif;
@@ -374,7 +390,7 @@ body {
 
 .trufados-preco-destaque {
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 1.8rem;
+  font-size: 3.6rem;
   font-weight: bold;
   color: #7C9E6C;
   margin-bottom: 0.75rem;
@@ -411,12 +427,12 @@ body {
 
 .trufado-sabor-nome {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 1.05rem;
+  font-size: 2.1rem;
   color: #526947;
 }
 
 .trufado-sabor-preco {
-  font-size: 1.1rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: #7C9E6C;
   white-space: nowrap;
@@ -427,7 +443,7 @@ body {
   align-items: center;
   gap: 0.3rem;
   color: #25D366;
-  font-size: 0.78rem;
+  font-size: 1.56rem;
   font-weight: bold;
   text-decoration: none;
   margin-left: 0.5rem;
@@ -459,15 +475,15 @@ body {
 }
 
 .img-trad-unico {
-  width: 25%;
-  max-width: 100px;
+  width: 50%;
+  max-width: 200px;
   mix-blend-mode: multiply;
   /* Sem sombra */
 }
 
 .img-trad-varios {
-  width: 55%;
-  max-width: 220px;
+  width: 110%;
+  max-width: 440px;
   mix-blend-mode: multiply;
   /* Sem sombra */
 }
@@ -498,14 +514,14 @@ body {
 .trad-peso {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
-  font-size: 0.88rem;
+  font-size: 1.76rem;
   color: #7C9E6C;
   margin-bottom: 0.2rem;
 }
 
 .trad-preco {
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 1.6rem;
+  font-size: 3.2rem;
   font-weight: bold;
   color: #7C9E6C;
   margin-bottom: 0.6rem;
@@ -518,7 +534,7 @@ body {
   background: #25D366;
   color: #fff;
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 0.82rem;
+  font-size: 1.64rem;
   font-weight: bold;
   text-decoration: none;
   padding: 0.45rem 0.85rem;
@@ -551,7 +567,7 @@ body {
 .aviso-card h2 {
   font-family: 'FonteTitulos', Georgia, serif;
   color: #7C9E6C;
-  font-size: 1.25rem;
+  font-size: 2.5rem;
   margin-bottom: 0.85rem;
 }
 
@@ -562,7 +578,7 @@ body {
 .aviso-card p {
   margin-bottom: 0.65rem;
   line-height: 1.55;
-  font-size: 0.92rem;
+  font-size: 1.84rem;
 }
 
 .aviso-card p:last-child {
@@ -590,14 +606,14 @@ body {
 }
 
 .final-card p {
-  font-size: 0.95rem;
+  font-size: 1.9rem;
   line-height: 1.6;
   margin-bottom: 0.6rem;
 }
 
 .assinatura {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 1.15rem;
+  font-size: 2.3rem;
   color: #7C9E6C;
 }
 
@@ -615,7 +631,7 @@ body {
   gap: 0.45rem;
   text-decoration: none;
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.9rem;
   font-weight: bold;
   box-shadow: 0 4px 20px rgba(37,211,102,0.35);
   z-index: 1000;
