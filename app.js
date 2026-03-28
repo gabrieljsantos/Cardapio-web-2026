@@ -10,6 +10,12 @@ var ovosColher = [
     desc: 'Combinação perfeita de chocolate ao leite e chocolate branco, com recheio cremoso dos dois chocolates. Finalizado com brigadeiros.'
   },
   {
+    nome: 'Ninho com Nutella',
+    preco: 100,
+    casca: 'Casca de chocolate ao leite',
+    desc: 'Recheio de ninho e Nutella, finalizado com docinhos de leite Ninho com Nutella.'
+  },
+  {
     nome: 'Morango',
     preco: 95,
     casca: 'Casca: escolher (ao leite ou branca)',
