@@ -8,6 +8,9 @@
 </head>
 <body>
 
+  <!-- ÁUDIO DE FUNDO -->
+  <audio id="bg-music" src="assets/music.mp3" autoplay loop></audio>
+
   <!-- FUNDO FIXO LISTRADO -->
   <div class="bg-fixed"></div>
 
@@ -106,5 +109,27 @@
   </a>
 
   <script src="./app.js"></script>
+</body>
+<script>
+// Tentar garantir reprodução automática em navegadores modernos
+window.addEventListener('DOMContentLoaded', function() {
+  var audio = document.getElementById('bg-music');
+  if (audio) {
+    var playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(function(error) {
+        // Se o navegador bloquear, tentar reproduzir após interação
+        var tryPlay = function() {
+          audio.play();
+          window.removeEventListener('click', tryPlay);
+          window.removeEventListener('touchstart', tryPlay);
+        };
+        window.addEventListener('click', tryPlay);
+        window.addEventListener('touchstart', tryPlay);
+      });
+    }
+  }
+});
+</script>
 </body>
 </html>
