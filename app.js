@@ -96,16 +96,15 @@ function svgZap(w) {
   return '<svg viewBox="0 0 32 32" width="' + s + '" height="' + s + '" fill="currentColor"><path d="M16.01 2.93A13.07 13.07 0 0 0 2.93 16a12.94 12.94 0 0 0 1.74 6.53L2.84 29.16l6.83-1.79A13.06 13.06 0 1 0 16.01 2.93zm0 23.93a10.82 10.82 0 0 1-5.52-1.51l-.4-.23-4.05 1.06 1.08-3.94-.26-.41a10.87 10.87 0 1 1 9.15 5.03zm5.96-8.13c-.33-.16-1.93-.95-2.23-1.06s-.52-.16-.73.17-.84 1.06-1.03 1.28-.38.25-.71.08a8.93 8.93 0 0 1-2.64-1.63 9.87 9.87 0 0 1-1.82-2.26c-.19-.33 0-.5.14-.67.14-.15.33-.38.49-.58s.22-.33.33-.55a.6.6 0 0 0-.03-.58c-.08-.16-.73-1.76-.99-2.41s-.52-.55-.73-.56h-.62a1.2 1.2 0 0 0-.87.41 3.64 3.64 0 0 0-1.13 2.71 6.34 6.34 0 0 0 1.33 3.37 14.53 14.53 0 0 0 5.57 4.92 18.7 18.7 0 0 0 1.86.69 4.47 4.47 0 0 0 2.06.13 3.36 3.36 0 0 0 2.2-1.55 2.71 2.71 0 0 0 .19-1.55c-.08-.14-.3-.22-.63-.38z"/></svg>';
 }
 
-// ========== MENSAGEM DO WHATSAPP REFORMULADA ==========
+// ========== MENSAGEM DO WHATSAPP ==========
 
 function msgPedido(nomeItem) {
-  // Remove peso (aprox.), valor (R$) e massa de nomeItem
   var textoLimpo = nomeItem
-    .replace(/\(.*?R\$.*?\)/g, '') // remove (R$...) entre parênteses
-    .replace(/\baprox\.? ?\d+g\b/gi, '') // remove aprox. 250g, etc
-    .replace(/\bmassa:? ?[^,\n)]+/gi, '') // remove massa: ...
-    .replace(/\(.*?g\)/g, '') // remove (250g), (350g), etc
-    .replace(/\s+/g, ' ') // remove espaços extras
+    .replace(/\(.*?R\$.*?\)/g, '')
+    .replace(/\baprox\.? ?\d+g\b/gi, '')
+    .replace(/\bmassa:? ?[^,\n)]+/gi, '')
+    .replace(/\(.*?g\)/g, '')
+    .replace(/\s+/g, ' ')
     .trim();
   return 'Olá! Gostaria de pedir um:\n*' + textoLimpo + '*\ne meu nome é:';
 }
@@ -133,7 +132,7 @@ function renderColher() {
       '<div class="sabor-casca">' + item.casca + '</div>' +
       '<div class="sabor-desc">' + item.desc + '</div>' +
       '<a href="' + href + '" target="_blank" rel="noopener" class="sabor-link-pedir">' +
-        svgZap(16) +
+        svgZap(14) +
         ' Pedir agora' +
       '</a>';
 
@@ -147,20 +146,17 @@ function renderTrufados() {
   var container = document.getElementById('ovos-trufados');
   if (!container) return;
 
-  // Preço destaque
   var precoDiv = document.createElement('div');
   precoDiv.className = 'trufados-preco-destaque fade-up';
   precoDiv.textContent = 'R$ ' + trufadoPreco;
   container.appendChild(precoDiv);
 
-  // Subtítulo
   var sub = document.createElement('p');
-  sub.style.cssText = 'text-align:center;margin-bottom:0.85rem;font-size:0.92rem;color:#526947;';
+  sub.style.cssText = 'text-align:center;margin-bottom:0.7rem;font-size:clamp(0.78rem,3vw,0.9rem);color:#526947;';
   sub.textContent = 'Escolha seu sabor e clique para pedir:';
   sub.className = 'fade-up';
   container.appendChild(sub);
 
-  // Grid de sabores
   var grid = document.createElement('div');
   grid.className = 'trufados-sabores-grid';
 
@@ -178,9 +174,9 @@ function renderTrufados() {
     card.title = 'Clique para pedir ' + sabor;
 
     card.innerHTML =
-      '<span class="trufado-sabor-nome">🍫 ' + sabor + '</span>' +
+      '<span class="trufado-sabor-nome">' + sabor + '</span>' +
       '<span class="trufado-pedir-link">' +
-        svgZap(14) +
+        svgZap(13) +
         ' Pedir' +
       '</span>';
 
@@ -211,7 +207,7 @@ function renderTradicionais() {
       '<div class="trad-peso">' + item.peso + '</div>' +
       '<div class="trad-preco">R$ ' + item.preco + '</div>' +
       '<a href="' + href + '" target="_blank" rel="noopener" class="trad-pedir-link" title="Clique para pedir">' +
-        svgZap(15) +
+        svgZap(13) +
         ' Pedir agora' +
       '</a>';
 
@@ -263,7 +259,6 @@ document.addEventListener('DOMContentLoaded', function() {
   renderTradicionais();
   initBtnZap();
 
-  // Delay para animação funcionar após render
   requestAnimationFrame(function() {
     requestAnimationFrame(function() {
       initScrollAnim();

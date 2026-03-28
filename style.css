@@ -1,29 +1,3 @@
-/* Marca d'água do logo no cabeçalho */
-.logo-watermark-wrap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.logo-watermark {
-  opacity: 0.08;
-  width: 100%;
-  max-width: 520px;
-  filter: blur(0.5px);
-  user-select: none;
-}
-
-.header {
-  position: relative;
-  z-index: 1;
-}
 /* ========== FONTES ========== */
 @font-face {
   font-family: 'FonteTitulos';
@@ -65,13 +39,14 @@ body {
   color: #526947;
   min-height: 100vh;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 /* ========== CONTAINER PRINCIPAL ========== */
 .container-principal {
-  max-width: 624px;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0.5rem;
 }
 
 /* ========== ANIMAÇÕES GLOBAIS ========== */
@@ -151,87 +126,92 @@ body {
 
 /* ========== CABEÇALHO ========== */
 .header {
+  position: relative;
+  z-index: 1;
   background: #EAEDD8;
   text-align: center;
-  padding: 0 1rem 0.5rem 1rem;
-  border-radius: 0 0 32px 32px;
+  padding: 0 0.75rem 0.5rem 0.75rem;
+  border-radius: 0 0 24px 24px;
   overflow: hidden;
 }
 
-.header-deco {
+/* Marca d'água do logo no cabeçalho */
+.logo-watermark-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  overflow: hidden;
-  margin-bottom: 0.75rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.header-img {
+.logo-watermark {
+  opacity: 0.08;
   width: 100%;
-  display: block;
-}
-
-.logo {
-  width: 80%;
-  max-width: 50%;
-  display: block;
-  margin: 0 auto 0.75rem auto;
-  filter: drop-shadow(0 2px 6px rgba(82,105,71,0.12));
+  max-width: 380px;
+  filter: blur(0.5px);
+  user-select: none;
 }
 
 .titulo-wrap {
+  position: relative;
+  z-index: 1;
   margin: 0.5rem 0 0.5rem 0;
 }
-
 
 .titulo-principal,
 .titulo-de,
 .titulo-pascoa {
   font-family: 'FonteTitulos', Georgia, serif;
   color: #7C9E6C;
-  font-size: clamp(6rem, 8vw, 6rem);
+  font-size: clamp(2.2rem, 10vw, 3.8rem);
   line-height: 1.1;
   letter-spacing: 0.5px;
 }
 
+.titulo-de {
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
+}
+
 .coelho-hero {
-  max-width: 330px;
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  max-width: 220px;
+  width: 70%;
   margin: 0.5rem auto 0 auto;
   display: block;
   filter: drop-shadow(0 3px 10px rgba(82,105,71,0.12));
-  animation: bounceCoelho 2s ease-in-out infinite, swayCoelho 4s ease-in-out infinite;
-}
-
-@keyframes bounceCoelho {
-  0%, 100% { transform: translateY(0); }
-  30% { transform: translateY(-12px); }
-  50% { transform: translateY(-6px); }
-  70% { transform: translateY(-10px); }
+  animation: swayCoelho 4s ease-in-out infinite;
 }
 
 @keyframes swayCoelho {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  25% { transform: translateY(-10px) rotate(2deg); }
-  50% { transform: translateY(-4px) rotate(0deg); }
-  75% { transform: translateY(-10px) rotate(-2deg); }
+  25% { transform: translateY(-8px) rotate(1.5deg); }
+  50% { transform: translateY(-3px) rotate(0deg); }
+  75% { transform: translateY(-8px) rotate(-1.5deg); }
 }
 
 /* ========== SEÇÕES ========== */
 .secao {
   background: #EAEDD8;
-  margin: 1rem 0;
-  padding: 1.5rem 1rem;
-  border-radius: 24px;
+  margin: 0.75rem 0;
+  padding: 1.25rem 0.75rem;
+  border-radius: 20px;
 }
 
 .secao-titulo-wrap {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .secao-titulo-wrap h2 {
   font-family: 'FonteTitulos', Georgia, serif;
   color: #7C9E6C;
-  font-size: clamp(2.8rem, 11vw, 4.4rem);
+  font-size: clamp(1.6rem, 8vw, 2.8rem);
   margin-bottom: 0.15rem;
 }
 
@@ -239,9 +219,9 @@ body {
   content: '';
   display: block;
   width: 50%;
-  height: 2.5px;
+  height: 2px;
   background: linear-gradient(90deg, transparent, #7C9E6C, transparent);
-  margin: 0.35rem auto 0 auto;
+  margin: 0.3rem auto 0 auto;
   border-radius: 2px;
 }
 
@@ -249,7 +229,7 @@ body {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
   color: #7C9E6C;
-  font-size: 1.8rem;
+  font-size: clamp(0.85rem, 3.5vw, 1.1rem);
 }
 
 /* ====================================================
@@ -257,23 +237,23 @@ body {
    ==================================================== */
 .colher-img-topo {
   text-align: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .colher-img-topo img {
-  width: 60%;
-  max-width: 250px;
+  width: 55%;
+  max-width: 200px;
   filter: drop-shadow(0 4px 14px rgba(82,105,71,0.15));
 }
 
 /* ========== CARD SABOR (Colher) ========== */
 .card-sabor {
   background: #fff;
-  border-radius: 16px;
-  padding: 1rem 1.1rem;
-  margin-bottom: 0.85rem;
-  box-shadow: 0 2px 10px rgba(82,105,71,0.07);
-  border-left: 4px solid #7C9E6C;
+  border-radius: 14px;
+  padding: 0.85rem 0.9rem;
+  margin-bottom: 0.7rem;
+  box-shadow: 0 2px 8px rgba(82,105,71,0.07);
+  border-left: 3px solid #7C9E6C;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -284,54 +264,58 @@ body {
 }
 
 .card-sabor:hover {
-  box-shadow: 0 4px 20px rgba(82,105,71,0.14);
-  transform: translateY(-3px);
+  box-shadow: 0 4px 16px rgba(82,105,71,0.14);
+  transform: translateY(-2px);
 }
 
 .card-sabor-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
+  gap: 0.5rem;
 }
 
 .sabor-nome {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 3.45rem;
+  font-size: clamp(2.1rem, 4.5vw, 1.5rem);
   color: #526947;
   text-decoration: none;
+  flex: 1;
+  min-width: 0;
 }
 
 .sabor-preco {
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 3.6rem;
+  font-size: clamp(2.05rem, 4.2vw, 1.4rem);
   font-weight: bold;
   color: #7C9E6C;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .sabor-casca {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
-  font-size: 2.46rem;
+  font-size: clamp(1.2rem, 3vw, 0.9rem);
   color: #7C9E6C;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .sabor-desc {
-  font-size: 1.76rem;
+  font-size: clamp(1.2rem, 3.1vw, 0.92rem);
   color: #526947;
   line-height: 1.45;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .sabor-link-pedir {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.3rem;
   color: #25D366;
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 1.7rem;
+  font-size: clamp(0.78rem, 3vw, 0.9rem);
   font-weight: bold;
   text-decoration: none;
   transition: color 0.2s, transform 0.2s;
@@ -343,7 +327,7 @@ body {
 }
 
 .sabor-link-pedir svg {
-  width: 16px; height: 16px; fill: #25D366;
+  width: 14px; height: 14px; fill: #25D366;
 }
 
 .sabor-link-pedir:hover svg {
@@ -353,12 +337,12 @@ body {
 /* Toque para pedir — indicador mobile */
 .card-sabor .pedir-hint {
   position: absolute;
-  top: 0.6rem; right: 0.6rem;
+  top: 0.5rem; right: 0.5rem;
   background: #25D366;
   color: #fff;
-  font-size: 1.3rem;
-  padding: 0.2rem 0.5rem;
-  border-radius: 8px;
+  font-size: 0.65rem;
+  padding: 0.15rem 0.4rem;
+  border-radius: 6px;
   font-family: 'FonteTexto', Arial, sans-serif;
   opacity: 0;
   animation: pulseHint 4s ease-in-out infinite;
@@ -377,47 +361,54 @@ body {
 }
 
 .trufados-perfil-wrap {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
 }
 
+/* =====================================================
+   REMOÇÃO DE FUNDO BRANCO — TRUFADOS & TRADICIONAIS
+   Técnica: mix-blend-mode: multiply faz com que o
+   branco se torne transparente sobre fundos claros.
+   ===================================================== */
 .img-perfil {
-  width: 85%;
-  max-width: 320px;
+  width: 80%;
+  max-width: 280px;
   mix-blend-mode: multiply;
   border-radius: 12px;
-  /* Sem sombra */
+  filter: contrast(1.05) saturate(1.05);
 }
 
 .trufados-preco-destaque {
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 3.6rem;
+  font-size: clamp(1.3rem, 5.5vw, 1.8rem);
   font-weight: bold;
   color: #7C9E6C;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
 }
 
 .trufados-sabores-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 0.6rem;
-  max-width: 340px;
+  gap: 0.5rem;
+  max-width: 320px;
   margin: 0 auto;
 }
 
 .card-trufado-sabor {
   background: #fff;
-  border-radius: 14px;
-  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  padding: 0.7rem 0.85rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-left: 4px solid #7C9E6C;
-  /* Sem box-shadow */
+  border-left: 3px solid #7C9E6C;
   transition: transform 0.3s ease, background 0.3s ease;
+  text-decoration: none;
 }
 
 .card-trufado-sabor:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   background: #f7f9f0;
 }
 
@@ -427,12 +418,12 @@ body {
 
 .trufado-sabor-nome {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 3.15rem;
+  font-size: clamp(1.5rem, 4.2vw, 1.35rem);
   color: #526947;
 }
 
 .trufado-sabor-preco {
-  font-size: 3.3rem;
+  font-size: clamp(1rem, 4vw, 1.3rem);
   font-weight: bold;
   color: #7C9E6C;
   white-space: nowrap;
@@ -441,12 +432,12 @@ body {
 .trufado-pedir-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.25rem;
   color: #25D366;
-  font-size: 2.34rem;
+  font-size: clamp(0.78rem, 3vw, 0.92rem);
   font-weight: bold;
   text-decoration: none;
-  margin-left: 0.5rem;
+  margin-left: 0.4rem;
   flex-shrink: 0;
   transition: transform 0.2s;
 }
@@ -456,7 +447,7 @@ body {
 }
 
 .trufado-pedir-link svg {
-  width: 14px; height: 14px; fill: #25D366;
+  width: 13px; height: 13px; fill: #25D366;
 }
 
 /* ====================================================
@@ -470,75 +461,76 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.25rem;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
 }
 
+/* Remoção de fundo branco — tradicionais */
 .img-trad-unico {
-  width: 50%;
-  max-width: 200px;
+  width: 38%;
+  max-width: 150px;
   mix-blend-mode: multiply;
-  /* Sem sombra */
+  filter: contrast(1.05) saturate(1.05);
 }
 
 .img-trad-varios {
-  width: 110%;
-  max-width: 440px;
+  width: 58%;
+  max-width: 250px;
   mix-blend-mode: multiply;
-  /* Sem sombra */
+  filter: contrast(1.05) saturate(1.05);
 }
 
 .tradicionais-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.75rem;
-  max-width: 360px;
+  gap: 0.6rem;
+  max-width: 320px;
   margin: 0 auto;
 }
 
 .card-tradicional {
   background: #fff;
-  border-radius: 16px;
-  padding: 1.1rem 0.85rem;
+  border-radius: 14px;
+  padding: 0.9rem 0.7rem;
   text-align: center;
-  border-top: 4px solid #7C9E6C;
-  /* Sem box-shadow */
+  border-top: 3px solid #7C9E6C;
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .card-tradicional:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   background: #f7f9f0;
 }
 
 .trad-peso {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
-  font-size: 2.64rem;
+  font-size: clamp(0.75rem, 3vw, 0.9rem);
   color: #7C9E6C;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.15rem;
 }
 
 .trad-preco {
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 3.2rem;
+  font-size: clamp(2.0rem, 5vw, 1.6rem);
   font-weight: bold;
   color: #7C9E6C;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.45rem;
 }
 
 .trad-pedir-link {
   display: inline-flex;
   align-items: center;
-  gap: 0.3rem;
+  gap: 0.25rem;
   background: #25D366;
   color: #fff;
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 1.64rem;
+  font-size: clamp(0.72rem, 2.8vw, 0.85rem);
   font-weight: bold;
   text-decoration: none;
-  padding: 0.45rem 0.85rem;
-  border-radius: 10px;
+  padding: 0.4rem 0.7rem;
+  border-radius: 8px;
   transition: background 0.2s, transform 0.2s;
 }
 
@@ -548,7 +540,7 @@ body {
 }
 
 .trad-pedir-link svg {
-  width: 15px; height: 15px; fill: #fff;
+  width: 13px; height: 13px; fill: #fff;
 }
 
 /* ========== AVISO ========== */
@@ -558,8 +550,8 @@ body {
 
 .aviso-card {
   background: #fff;
-  border-radius: 18px;
-  padding: 1.5rem 1.25rem;
+  border-radius: 16px;
+  padding: 1.2rem 1rem;
   text-align: center;
   border: 2px dashed #7C9E6C;
 }
@@ -567,8 +559,8 @@ body {
 .aviso-card h2 {
   font-family: 'FonteTitulos', Georgia, serif;
   color: #7C9E6C;
-  font-size: 2.5rem;
-  margin-bottom: 0.85rem;
+  font-size: clamp(1.5rem, 5vw, 1.6rem);
+  margin-bottom: 0.7rem;
 }
 
 .aviso-card h2::after {
@@ -576,9 +568,9 @@ body {
 }
 
 .aviso-card p {
-  margin-bottom: 0.65rem;
+  margin-bottom: 0.55rem;
   line-height: 1.55;
-  font-size: 2.76rem;
+  font-size: clamp(1.2rem, 3.3vw, 1rem);
 }
 
 .aviso-card p:last-child {
@@ -588,50 +580,51 @@ body {
 /* ========== MENSAGEM FINAL ========== */
 .secao-final {
   background: #EAEDD8;
-  border-radius: 24px 24px 0 0;
+  border-radius: 20px 20px 0 0;
   padding-bottom: 5rem;
 }
 
 .final-card {
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 }
 
 .logo-final {
-  width: 50%;
-  max-width: 260px;
+  width: 45%;
+  max-width: 200px;
   display: block;
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 0.85rem auto;
   filter: drop-shadow(0 2px 6px rgba(82,105,71,0.1));
 }
 
 .final-card p {
-  font-size: 2.85rem;
+  font-size: clamp(1.2rem, 3.4vw, 1.05rem);
   line-height: 1.6;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+  padding: 0 0.5rem;
 }
 
 .assinatura {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 2.3rem;
+  font-size: clamp(0.95rem, 3.8vw, 1.2rem);
   color: #7C9E6C;
 }
 
 /* ========== BOTÃO WHATSAPP FIXO ========== */
 .btn-whatsapp-fixo {
   position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
+  bottom: 1rem;
+  right: 1rem;
   background: #25D366;
   color: #fff;
   border-radius: 50px;
-  padding: 0.75rem 1.2rem;
+  padding: 0.65rem 1rem;
   display: flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.4rem;
   text-decoration: none;
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 1.9rem;
+  font-size: clamp(0.8rem, 3.2vw, 0.95rem);
   font-weight: bold;
   box-shadow: 0 4px 20px rgba(37,211,102,0.35);
   z-index: 1000;
@@ -652,85 +645,115 @@ body {
 
 .btn-whatsapp-fixo svg {
   flex-shrink: 0;
+  width: 22px;
+  height: 22px;
 }
 
 /* ====================================================
-   DESKTOP (min-width: 768px)
+   MOBILE MUITO PEQUENO (max-width: 360px)
    ==================================================== */
-@media (min-width: 768px) {
+@media (max-width: 360px) {
   .container-principal {
-    max-width: 680px;
+    padding: 0 0.25rem;
   }
 
-  .trufados-sabores-grid {
-    grid-template-columns: 1fr 1fr;
-    max-width: 450px;
-  }
-
-  .tradicionais-grid {
-    max-width: 400px;
-  }
-
-  .secao {
-    padding: 2rem 1.5rem;
-    border-radius: 28px;
-    margin: 1.25rem 0;
-  }
-}
-
-/* ====================================================
-   DESKTOP GRANDE (min-width: 1024px)
-   ==================================================== */
-@media (min-width: 1024px) {
-  .container-principal {
-    max-width: 780px;
-  }
-}
-
-/* ====================================================
-   MOBILE PEQUENO (max-width: 380px)
-   ==================================================== */
-@media (max-width: 380px) {
   .header {
-    padding: 0 0.75rem 0.25rem 0.75rem;
-  }
-
-  .titulo-principal {
-    font-size: 1.6rem;
-  }
-
-  .titulo-pascoa {
-    font-size: 1.9rem;
+    padding: 0 0.5rem 0.25rem 0.5rem;
   }
 
   .coelho-hero {
-    max-width: 100px;
+    max-width: 170px;
+    width: 60%;
   }
 
   .secao {
-    padding: 1.15rem 0.75rem;
-    margin: 0.6rem 0;
-    border-radius: 18px;
+    padding: 1rem 0.6rem;
+    margin: 0.5rem 0;
+    border-radius: 16px;
   }
 
   .card-sabor {
-    padding: 0.85rem 0.9rem;
+    padding: 0.7rem 0.75rem;
+    margin-bottom: 0.6rem;
   }
-
-  .sabor-nome { font-size: 1.05rem; }
-  .sabor-preco { font-size: 1.05rem; }
 
   .tradicionais-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
+  .card-tradicional {
+    padding: 0.75rem 0.5rem;
+  }
+
+  /* Botão WhatsApp — só ícone */
   .btn-whatsapp-fixo span {
     display: none;
   }
 
   .btn-whatsapp-fixo {
-    padding: 0.85rem;
+    padding: 0.75rem;
     border-radius: 50%;
+  }
+}
+
+/* ====================================================
+   MOBILE PADRÃO (361px - 480px)
+   ==================================================== */
+@media (min-width: 361px) and (max-width: 480px) {
+  .container-principal {
+    padding: 0 0.35rem;
+  }
+
+  .coelho-hero {
+    max-width: 200px;
+    width: 65%;
+  }
+}
+
+/* ====================================================
+   TABLET (min-width: 481px) e (max-width: 768px)
+   ==================================================== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .container-principal {
+    max-width: 540px;
+    padding: 0 0.75rem;
+  }
+
+  .trufados-sabores-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 400px;
+  }
+
+  .tradicionais-grid {
+    max-width: 360px;
+  }
+}
+
+/* ====================================================
+   DESKTOP (min-width: 769px)
+   ==================================================== */
+@media (min-width: 769px) {
+  .container-principal {
+    max-width: 620px;
+    padding: 0 1rem;
+  }
+
+  .secao {
+    padding: 1.75rem 1.25rem;
+    border-radius: 24px;
+    margin: 1rem 0;
+  }
+
+  .trufados-sabores-grid {
+    grid-template-columns: 1fr 1fr;
+    max-width: 440px;
+  }
+
+  .tradicionais-grid {
+    max-width: 380px;
+  }
+
+  .coelho-hero {
+    max-width: 280px;
   }
 }
