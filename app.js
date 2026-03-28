@@ -270,4 +270,47 @@ document.addEventListener('DOMContentLoaded', function() {
       initScrollAnim();
     });
   });
+
+  // ====== Mostrar/ocultar botão WhatsApp flutuante ======
+  var btnZap = document.getElementById('btn-whatsapp-fixo');
+  if (!btnZap) return;
+
+  // IDs das seções que devem exibir o botão
+  var secoesAlvo = [
+    'secao-colher',
+    'secao-trufados',
+    'secao-tradicionais'
+  ];
+
+  function checarVisibilidadeBtnZap() {
+    var mostrar = false;
+    for (var i = 0; i < secoesAlvo.length; i++) {
+      var secao = document.getElementById(secoesAlvo[i]);
+      if (!secao) continue;
+      var rect = secao.getBoundingClientRect();
+      // Considera visível se pelo menos metade da seção está na viewport
+      var metade = rect.height / 2;
+      var visivel =
+        rect.top < window.innerHeight - metade &&
+        rect.bottom > metade;
+      if (visivel) {
+        mostrar = true;
+        break;
+      }
+    }
+    if (mostrar) {
+      btnZap.style.opacity = '1';
+      btnZap.style.pointerEvents = 'auto';
+    } else {
+      btnZap.style.opacity = '0';
+      btnZap.style.pointerEvents = 'none';
+    }
+  }
+
+  // Esconde inicialmente
+  btnZap.style.opacity = '0';
+  btnZap.style.pointerEvents = 'none';
+  window.addEventListener('scroll', checarVisibilidadeBtnZap, { passive: true });
+  window.addEventListener('resize', checarVisibilidadeBtnZap);
+  checarVisibilidadeBtnZap();
 });

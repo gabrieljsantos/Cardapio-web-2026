@@ -47,6 +47,7 @@ body {
   max-width: 480px;
   margin: 0 auto;
   padding: 0 0.5rem;
+  padding-top: 0.75rem;
 }
 
 /* ========== ANIMAÇÕES GLOBAIS ========== */
@@ -160,7 +161,7 @@ body {
 .titulo-wrap {
   position: relative;
   z-index: 1;
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 2.2rem 0 1.2rem 0;
 }
 
 .titulo-principal,
@@ -168,21 +169,21 @@ body {
 .titulo-pascoa {
   font-family: 'FonteTitulos', Georgia, serif;
   color: #7C9E6C;
-  font-size: clamp(2.2rem, 10vw, 3.8rem);
+  font-size: clamp(4.2rem, 10vw, 3.8rem);
   line-height: 1.1;
   letter-spacing: 0.5px;
 }
 
 .titulo-de {
-  font-size: clamp(1.2rem, 5vw, 1.8rem);
+  font-size: clamp(4.2rem, 10vw, 3.8rem);
 }
 
 .coelho-hero {
   position: relative;
   z-index: 1;
   max-width: 220px;
-  width: 70%;
-  margin: 0.5rem auto 0 auto;
+  width: 90%;
+  margin: 0.5rem auto 2.2rem auto;
   display: block;
   filter: drop-shadow(0 3px 10px rgba(82,105,71,0.12));
   animation: swayCoelho 4s ease-in-out infinite;
@@ -628,8 +629,10 @@ body {
   font-weight: bold;
   box-shadow: 0 4px 20px rgba(37,211,102,0.35);
   z-index: 1000;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.35s cubic-bezier(.4,0,.2,1);
   animation: floatBtn 3s ease-in-out infinite;
+  opacity: 0;
+  pointer-events: none;
 }
 
 @keyframes floatBtn {
@@ -705,8 +708,8 @@ body {
   }
 
   .coelho-hero {
-    max-width: 200px;
-    width: 65%;
+    max-width: 800px;
+    width: 90%;
   }
 }
 
