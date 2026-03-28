@@ -115,11 +115,14 @@
 window.addEventListener('DOMContentLoaded', function() {
   var audio = document.getElementById('bg-music');
   if (audio) {
+    audio.volume = 0.2; // Define o volume para 20%
+  if (audio) {
     var playPromise = audio.play();
     if (playPromise !== undefined) {
       playPromise.catch(function(error) {
         // Se o navegador bloquear, tentar reproduzir após interação
         var tryPlay = function() {
+          audio.volume = 0.2; // Garante volume em 20% ao tentar reproduzir
           audio.play();
           window.removeEventListener('click', tryPlay);
           window.removeEventListener('touchstart', tryPlay);
