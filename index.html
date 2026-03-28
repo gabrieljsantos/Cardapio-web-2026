@@ -8,8 +8,9 @@
 </head>
 <body>
 
-  <!-- ÁUDIO DE FUNDO -->
-  <audio id="bg-music" src="assets/music2.mp3" autoplay loop></audio>
+  <!-- ÁUDIO DE FUNDO (sem autoplay, controlado por JS) -->
+  <audio id="bg-music" src="assets/music2.mp3" loop></audio>
+
 
   <!-- FUNDO FIXO LISTRADO -->
   <div class="bg-fixed"></div>
@@ -19,6 +20,8 @@
 
     <!-- CABEÇALHO -->
     <header class="header">
+        <!-- BOTÃO DE PERMISSÃO DE ÁUDIO DENTRO DO CABEÇALHO (apenas emoji) -->
+        <button id="permitir-audio" title="Ouvir música de fundo" style="position:absolute;top:18px;right:24px;z-index:1000;background:transparent;color:#7C9E6C;font-size:1.7em;padding:0;border:none;cursor:pointer;box-shadow:none;line-height:1;">🎵</button>
       <div class="logo-watermark-wrap">
         <img src="assets/logo-confeitaria-aldo-lanches.png" alt="Logo Aldo Lanches" class="logo-watermark">
       </div>
@@ -109,6 +112,29 @@
   </a>
 
   <script src="./app.js"></script>
+  <script>
+    // Botão de permissão de áudio dentro do cabeçalho
+    const audio = document.getElementById('bg-music');
+    const btnPermitir = document.getElementById('permitir-audio');
+    function hideBtn() {
+      if (btnPermitir) btnPermitir.style.display = 'none';
+    }
+    function showBtn() {
+      if (btnPermitir) btnPermitir.style.display = '';
+    }
+    // Tenta autoplay ao carregar
+    window.addEventListener('DOMContentLoaded', () => {
+      audio.volume = 0.2;
+      audio.play().then(hideBtn).catch(showBtn);
+    });
+    if (btnPermitir) {
+      btnPermitir.addEventListener('click', () => {
+        audio.volume = 0.2;
+        audio.play();
+        hideBtn();
+      });
+    }
+  </script>
 </body>
 <script>
 // ...nenhum controle de volume, áudio tocará no volume máximo...
