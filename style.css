@@ -297,14 +297,14 @@ body {
 
 .sabor-nome {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 2.3rem;
+  font-size: 3.45rem;
   color: #526947;
   text-decoration: none;
 }
 
 .sabor-preco {
   font-family: 'FonteTexto', Arial, sans-serif;
-  font-size: 2.4rem;
+  font-size: 3.6rem;
   font-weight: bold;
   color: #7C9E6C;
   white-space: nowrap;
@@ -313,7 +313,7 @@ body {
 .sabor-casca {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
-  font-size: 1.64rem;
+  font-size: 2.46rem;
   color: #7C9E6C;
   margin-bottom: 0.25rem;
 }
@@ -427,12 +427,12 @@ body {
 
 .trufado-sabor-nome {
   font-family: 'FonteTitulos', Georgia, serif;
-  font-size: 2.1rem;
+  font-size: 3.15rem;
   color: #526947;
 }
 
 .trufado-sabor-preco {
-  font-size: 2.2rem;
+  font-size: 3.3rem;
   font-weight: bold;
   color: #7C9E6C;
   white-space: nowrap;
@@ -443,7 +443,7 @@ body {
   align-items: center;
   gap: 0.3rem;
   color: #25D366;
-  font-size: 1.56rem;
+  font-size: 2.34rem;
   font-weight: bold;
   text-decoration: none;
   margin-left: 0.5rem;
@@ -514,7 +514,7 @@ body {
 .trad-peso {
   font-family: 'FonteTextoItalic', 'FonteTexto', Arial, sans-serif;
   font-style: italic;
-  font-size: 1.76rem;
+  font-size: 2.64rem;
   color: #7C9E6C;
   margin-bottom: 0.2rem;
 }
@@ -578,7 +578,7 @@ body {
 .aviso-card p {
   margin-bottom: 0.65rem;
   line-height: 1.55;
-  font-size: 1.84rem;
+  font-size: 2.76rem;
 }
 
 .aviso-card p:last-child {
@@ -606,7 +606,7 @@ body {
 }
 
 .final-card p {
-  font-size: 1.9rem;
+  font-size: 2.85rem;
   line-height: 1.6;
   margin-bottom: 0.6rem;
 }
